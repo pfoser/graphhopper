@@ -9,7 +9,7 @@ By default it uses OpenStreetMap and GTFS data, but it can import other data sou
 * Download the map and data files in [data](https://github.com/pfoser/graphhopper/tree/master/data) folder.
 
 This version has the following modifications. 
-* [osm-id-mapping](https://github.com/pfoser/graphhopper/tree/master/osm-id-mapping) contains gh classes that output osmids. The latest version is [MyImport_TK_threeways.java](https://github.com/pfoser/graphhopper/blob/master/osm-id-mapping/src/main/java/com/graphhopper/osmidexample/MyImport_TK_threeways.java)
+* [osm-id-mapping](https://github.com/pfoser/graphhopper/tree/master/osm-id-mapping) contains gh classes that output osmids. The latest version is [MyImport_TK_threeways.java](https://github.com/pfoser/graphhopper/blob/master/osm-id-mapping/src/main/java/com/graphhopper/osmidexample/MyImport_TK_threeways.java). This is your main gh class to run in IDE.
 * Blocking roads - [CarExpFlagEncode.java](https://github.com/pfoser/graphhopper/blob/master/core/src/main/java/com/graphhopper/routing/util/CarExpFlagEncoder.java) is the class to edit. Search for the line with //Dieter comment. The blocked list contains osmids that you want to block. The example contains the four ids for Roosevelt Bridge. When you make changes to this list you have to delete the entire graph file in the data folder, e.g., dc-baltimore_maryland.osm-gh in data. 
 
 # Community
