@@ -1,0 +1,162 @@
+2020-02-16 17:52:12.696 [main] INFO  i.d.server.DefaultServerFactory - Registering jersey handler with root path prefix: /
+2020-02-16 17:52:12.702 [main] INFO  i.d.server.DefaultServerFactory - Registering admin handler with root path prefix: /
+2020-02-16 17:52:13.483 [main] INFO  i.d.b.assets.ConfiguredAssetsBundle - Registering ConfiguredAssetBundle with name: assets for path /maps/*
+2020-02-16 17:52:13.500 [main] INFO  io.dropwizard.server.ServerFactory - Starting GraphHopperApplication
+                        _     _
+   __ _ _ __ __ _ _ __ | |__ | |__   ___  _ __  _ __   ___ _ __
+  / _` | '__/ _` | '_ \| '_ \| '_ \ / _ \| '_ \| '_ \ / _ \ '__|
+ | (_| | | | (_| | |_) | | | | | | | (_) | |_) | |_) |  __/ |
+  \__, |_|  \__,_| .__/|_| |_|_| |_|\___/| .__/| .__/ \___|_|
+  |___/          |_|                     |_|   |_|
+
+2020-02-16 17:52:13.607 [main] INFO  o.e.jetty.setuid.SetUIDListener - Opened application@751ae8a4{HTTP/1.1,[http/1.1]}{localhost:8989}
+2020-02-16 17:52:13.608 [main] INFO  o.e.jetty.setuid.SetUIDListener - Opened admin@235d659c{HTTP/1.1,[http/1.1]}{localhost:8990}
+2020-02-16 17:52:13.611 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.18.v20190429; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_111-b14
+2020-02-16 17:52:13.665 [main] ERROR io.dropwizard.cli.ServerCommand - Unable to start server, shutting down
+java.lang.IllegalStateException: Encoded values do not match:
+Graphhopper config: roundabout|version=283388307|bits=1|index=0|shift=0|store_both_directions=false,road_class|version=888755028|bits=5|index=0|shift=1|store_both_directions=false,road_class_link|version=146075245|bits=1|index=0|shift=6|store_both_directions=false,road_environment|version=-446726394|bits=3|index=0|shift=7|store_both_directions=false,max_speed|version=-1300485567|bits=5|index=0|shift=10|store_both_directions=true,road_access|version=-313723172|bits=4|index=0|shift=20|store_both_directions=false
+Graph: roundabout|version=283388307|bits=1|index=0|shift=0|store_both_directions=false
+Change configuration to match the graph or delete ./data/dc-baltimore_maryland.osm-gh/
+	at com.graphhopper.storage.GraphHopperStorage.loadExisting(GraphHopperStorage.java:256)
+	at com.graphhopper.GraphHopper.load(GraphHopper.java:756)
+	at com.graphhopper.GraphHopper.importOrLoad(GraphHopper.java:614)
+	at com.graphhopper.http.GraphHopperManaged.start(GraphHopperManaged.java:74)
+	at io.dropwizard.lifecycle.JettyManaged.doStart(JettyManaged.java:27)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:167)
+	at org.eclipse.jetty.server.Server.start(Server.java:418)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:119)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:382)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at io.dropwizard.cli.ServerCommand.run(ServerCommand.java:53)
+	at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:44)
+	at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:87)
+	at io.dropwizard.cli.Cli.run(Cli.java:78)
+	at io.dropwizard.Application.run(Application.java:93)
+	at com.graphhopper.http.GraphHopperApplication.main(GraphHopperApplication.java:34)
+2020-02-16 17:53:01.749 [main] INFO  i.d.server.DefaultServerFactory - Registering jersey handler with root path prefix: /
+2020-02-16 17:53:01.759 [main] INFO  i.d.server.DefaultServerFactory - Registering admin handler with root path prefix: /
+2020-02-16 17:55:37.103 [main] INFO  i.d.server.DefaultServerFactory - Registering jersey handler with root path prefix: /
+2020-02-16 17:55:37.107 [main] INFO  i.d.server.DefaultServerFactory - Registering admin handler with root path prefix: /
+2020-02-16 17:55:37.696 [main] INFO  i.d.b.assets.ConfiguredAssetsBundle - Registering ConfiguredAssetBundle with name: assets for path /maps/*
+2020-02-16 17:55:37.713 [main] INFO  io.dropwizard.server.ServerFactory - Starting GraphHopperApplication
+                        _     _
+   __ _ _ __ __ _ _ __ | |__ | |__   ___  _ __  _ __   ___ _ __
+  / _` | '__/ _` | '_ \| '_ \| '_ \ / _ \| '_ \| '_ \ / _ \ '__|
+ | (_| | | | (_| | |_) | | | | | | | (_) | |_) | |_) |  __/ |
+  \__, |_|  \__,_| .__/|_| |_|_| |_|\___/| .__/| .__/ \___|_|
+  |___/          |_|                     |_|   |_|
+
+2020-02-16 17:55:37.803 [main] INFO  o.e.jetty.setuid.SetUIDListener - Opened application@58c1da09{HTTP/1.1,[http/1.1]}{localhost:8989}
+2020-02-16 17:55:37.803 [main] INFO  o.e.jetty.setuid.SetUIDListener - Opened admin@2b2954e1{HTTP/1.1,[http/1.1]}{localhost:8990}
+2020-02-16 17:55:37.805 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.18.v20190429; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_111-b14
+2020-02-16 17:55:37.859 [main] ERROR io.dropwizard.cli.ServerCommand - Unable to start server, shutting down
+java.lang.IllegalStateException: Encoding does not match:
+Graphhopper config: foot|speed_factor=1.0|speed_bits=4|turn_costs=false|version=5,car|speed_factor=5.0|speed_bits=5|turn_costs=false|version=2
+Graph: car|speed_factor=5.0|speed_bits=5|turn_costs=false|version=2
+Change configuration to match the graph or delete ./data/dc-baltimore_maryland.osm-gh/
+	at com.graphhopper.storage.GraphHopperStorage.loadExisting(GraphHopperStorage.java:248)
+	at com.graphhopper.GraphHopper.load(GraphHopper.java:756)
+	at com.graphhopper.GraphHopper.importOrLoad(GraphHopper.java:614)
+	at com.graphhopper.http.GraphHopperManaged.start(GraphHopperManaged.java:74)
+	at io.dropwizard.lifecycle.JettyManaged.doStart(JettyManaged.java:27)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:167)
+	at org.eclipse.jetty.server.Server.start(Server.java:418)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:119)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:113)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:382)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at io.dropwizard.cli.ServerCommand.run(ServerCommand.java:53)
+	at io.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:44)
+	at io.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:87)
+	at io.dropwizard.cli.Cli.run(Cli.java:78)
+	at io.dropwizard.Application.run(Application.java:93)
+	at com.graphhopper.http.GraphHopperApplication.main(GraphHopperApplication.java:34)
+2020-02-16 17:57:24.033 [main] INFO  i.d.server.DefaultServerFactory - Registering jersey handler with root path prefix: /
+2020-02-16 17:57:24.038 [main] INFO  i.d.server.DefaultServerFactory - Registering admin handler with root path prefix: /
+2020-02-16 17:57:24.651 [main] INFO  i.d.b.assets.ConfiguredAssetsBundle - Registering ConfiguredAssetBundle with name: assets for path /maps/*
+2020-02-16 17:57:24.669 [main] INFO  io.dropwizard.server.ServerFactory - Starting GraphHopperApplication
+                        _     _
+   __ _ _ __ __ _ _ __ | |__ | |__   ___  _ __  _ __   ___ _ __
+  / _` | '__/ _` | '_ \| '_ \| '_ \ / _ \| '_ \| '_ \ / _ \ '__|
+ | (_| | | | (_| | |_) | | | | | | | (_) | |_) | |_) |  __/ |
+  \__, |_|  \__,_| .__/|_| |_|_| |_|\___/| .__/| .__/ \___|_|
+  |___/          |_|                     |_|   |_|
+
+2020-02-16 17:57:24.763 [main] INFO  o.e.jetty.setuid.SetUIDListener - Opened application@58c1da09{HTTP/1.1,[http/1.1]}{localhost:8989}
+2020-02-16 17:57:24.763 [main] INFO  o.e.jetty.setuid.SetUIDListener - Opened admin@2b2954e1{HTTP/1.1,[http/1.1]}{localhost:8990}
+2020-02-16 17:57:24.766 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.18.v20190429; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_111-b14
+2020-02-16 17:57:25.005 [main] INFO  c.g.reader.osm.GraphHopperOSM - version 0.13|2020-02-16T22:46:28Z (5,15,4,3,3,5)
+2020-02-16 17:57:25.010 [main] INFO  c.g.reader.osm.GraphHopperOSM - graph CH|car|RAM_STORE|2D|NoExt|5,15,4,3,3, details:edges:985 847(31MB), nodes:752 473(9MB), name:(3MB), geo:4 098 754(16MB), bounds:-77.66177194554594,-75.88313000387988,38.44516698521004,39.698172875452926, CHGraph|fastest|car|edge_based=false|u_turn_costs=-1, shortcuts:616 489, nodesCH:(6MB)
+2020-02-16 17:57:25.011 [main] INFO  c.g.http.GraphHopperManaged - loaded graph at:./data/dc-baltimore_maryland.osm-gh, data_reader_file:./data/dc-baltimore_maryland.osm.pbf, encoded values:roundabout|version=283388307|bits=1|index=0|shift=0|store_both_directions=false, edges:985 847(31MB), nodes:752 473(9MB), name:(3MB), geo:4 098 754(16MB), bounds:-77.66177194554594,-75.88313000387988,38.44516698521004,39.698172875452926, CHGraph|fastest|car|edge_based=false|u_turn_costs=-1, shortcuts:616 489, nodesCH:(6MB)
+2020-02-16 17:57:25.842 [main] INFO  i.d.jersey.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    GET     / (com.graphhopper.http.resources.RootResource)
+    GET     /i18n (com.graphhopper.resources.I18NResource)
+    GET     /i18n/{locale} (com.graphhopper.resources.I18NResource)
+    GET     /info (com.graphhopper.resources.InfoResource)
+    GET     /isochrone (com.graphhopper.resources.IsochroneResource)
+    GET     /mvt/{z}/{x}/{y}.mvt (com.graphhopper.resources.MVTResource)
+    GET     /nearest (com.graphhopper.resources.NearestResource)
+    GET     /route (com.graphhopper.resources.RouteResource)
+    GET     /spt (com.graphhopper.resources.SPTResource)
+
+2020-02-16 17:57:25.850 [main] INFO  o.e.j.server.handler.ContextHandler - Started i.d.j.MutableServletContextHandler@3313d477{/,null,AVAILABLE}
+2020-02-16 17:57:25.859 [main] INFO  io.dropwizard.setup.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+2020-02-16 17:57:25.869 [main] INFO  o.e.j.server.handler.ContextHandler - Started i.d.j.MutableServletContextHandler@7b18658a{/,null,AVAILABLE}
+2020-02-16 17:57:25.883 [main] INFO  o.e.jetty.server.AbstractConnector - Started application@58c1da09{HTTP/1.1,[http/1.1]}{localhost:8989}
+2020-02-16 17:57:25.887 [main] INFO  o.e.jetty.server.AbstractConnector - Started admin@2b2954e1{HTTP/1.1,[http/1.1]}{localhost:8990}
+2020-02-16 17:57:25.888 [main] INFO  org.eclipse.jetty.server.Server - Started @4855ms
+2020-02-16 17:59:07.260 [Thread-11] INFO  o.e.jetty.server.AbstractConnector - Stopped application@58c1da09{HTTP/1.1,[http/1.1]}{localhost:8989}
+2020-02-16 17:59:07.262 [Thread-11] INFO  o.e.jetty.server.AbstractConnector - Stopped admin@2b2954e1{HTTP/1.1,[http/1.1]}{localhost:8990}
+2020-02-16 17:59:07.265 [Thread-11] INFO  o.e.j.server.handler.ContextHandler - Stopped i.d.j.MutableServletContextHandler@7b18658a{/,null,UNAVAILABLE}
+2020-02-16 17:59:07.274 [Thread-11] INFO  o.e.j.server.handler.ContextHandler - Stopped i.d.j.MutableServletContextHandler@3313d477{/,null,UNAVAILABLE}
+2020-02-16 18:02:33.369 [main] INFO  i.d.server.DefaultServerFactory - Registering jersey handler with root path prefix: /
+2020-02-16 18:02:33.373 [main] INFO  i.d.server.DefaultServerFactory - Registering admin handler with root path prefix: /
+2020-02-16 18:02:33.956 [main] INFO  i.d.b.assets.ConfiguredAssetsBundle - Registering ConfiguredAssetBundle with name: assets for path /maps/*
+2020-02-16 18:02:33.980 [main] INFO  io.dropwizard.server.ServerFactory - Starting GraphHopperApplication
+                        _     _
+   __ _ _ __ __ _ _ __ | |__ | |__   ___  _ __  _ __   ___ _ __
+  / _` | '__/ _` | '_ \| '_ \| '_ \ / _ \| '_ \| '_ \ / _ \ '__|
+ | (_| | | | (_| | |_) | | | | | | | (_) | |_) | |_) |  __/ |
+  \__, |_|  \__,_| .__/|_| |_|_| |_|\___/| .__/| .__/ \___|_|
+  |___/          |_|                     |_|   |_|
+
+2020-02-16 18:02:34.092 [main] INFO  o.e.jetty.setuid.SetUIDListener - Opened application@7eaa2bc6{HTTP/1.1,[http/1.1]}{localhost:8989}
+2020-02-16 18:02:34.092 [main] INFO  o.e.jetty.setuid.SetUIDListener - Opened admin@6dae70f9{HTTP/1.1,[http/1.1]}{localhost:8990}
+2020-02-16 18:02:34.095 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.18.v20190429; built: 2019-04-29T20:42:08.989Z; git: e1bc35120a6617ee3df052294e433f3a25ce7097; jvm 1.8.0_111-b14
+2020-02-16 18:02:34.370 [main] INFO  c.g.reader.osm.GraphHopperOSM - version 0.13|2020-02-16T22:46:28Z (5,15,4,3,3,5)
+2020-02-16 18:02:34.373 [main] INFO  c.g.reader.osm.GraphHopperOSM - graph CH|car|RAM_STORE|2D|NoExt|5,15,4,3,3, details:edges:985 847(31MB), nodes:752 473(9MB), name:(3MB), geo:4 098 754(16MB), bounds:-77.66177194554594,-75.88313000387988,38.44516698521004,39.698172875452926, CHGraph|fastest|car|edge_based=false|u_turn_costs=-1, shortcuts:616 489, nodesCH:(6MB)
+2020-02-16 18:02:34.375 [main] INFO  c.g.http.GraphHopperManaged - loaded graph at:./data/dc-baltimore_maryland.osm-gh, data_reader_file:./data/dc-baltimore_maryland.osm.pbf, encoded values:roundabout|version=283388307|bits=1|index=0|shift=0|store_both_directions=false, edges:985 847(31MB), nodes:752 473(9MB), name:(3MB), geo:4 098 754(16MB), bounds:-77.66177194554594,-75.88313000387988,38.44516698521004,39.698172875452926, CHGraph|fastest|car|edge_based=false|u_turn_costs=-1, shortcuts:616 489, nodesCH:(6MB)
+2020-02-16 18:02:35.423 [main] INFO  i.d.jersey.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    GET     / (com.graphhopper.http.resources.RootResource)
+    GET     /i18n (com.graphhopper.resources.I18NResource)
+    GET     /i18n/{locale} (com.graphhopper.resources.I18NResource)
+    GET     /info (com.graphhopper.resources.InfoResource)
+    GET     /isochrone (com.graphhopper.resources.IsochroneResource)
+    GET     /mvt/{z}/{x}/{y}.mvt (com.graphhopper.resources.MVTResource)
+    GET     /nearest (com.graphhopper.resources.NearestResource)
+    GET     /route (com.graphhopper.resources.RouteResource)
+    GET     /spt (com.graphhopper.resources.SPTResource)
+
+2020-02-16 18:02:35.425 [main] INFO  o.e.j.server.handler.ContextHandler - Started i.d.j.MutableServletContextHandler@470c4229{/,null,AVAILABLE}
+2020-02-16 18:02:35.431 [main] INFO  io.dropwizard.setup.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+2020-02-16 18:02:35.439 [main] INFO  o.e.j.server.handler.ContextHandler - Started i.d.j.MutableServletContextHandler@7be62956{/,null,AVAILABLE}
+2020-02-16 18:02:35.463 [main] INFO  o.e.jetty.server.AbstractConnector - Started application@7eaa2bc6{HTTP/1.1,[http/1.1]}{localhost:8989}
+2020-02-16 18:02:35.465 [main] INFO  o.e.jetty.server.AbstractConnector - Started admin@6dae70f9{HTTP/1.1,[http/1.1]}{localhost:8990}
+2020-02-16 18:02:35.465 [main] INFO  org.eclipse.jetty.server.Server - Started @6141ms
+2020-02-16 18:02:39.508 [Thread-11] INFO  o.e.jetty.server.AbstractConnector - Stopped application@7eaa2bc6{HTTP/1.1,[http/1.1]}{localhost:8989}
+2020-02-16 18:02:39.517 [Thread-11] INFO  o.e.jetty.server.AbstractConnector - Stopped admin@6dae70f9{HTTP/1.1,[http/1.1]}{localhost:8990}
+2020-02-16 18:02:39.519 [Thread-11] INFO  o.e.j.server.handler.ContextHandler - Stopped i.d.j.MutableServletContextHandler@7be62956{/,null,UNAVAILABLE}
+2020-02-16 18:02:39.534 [Thread-11] INFO  o.e.j.server.handler.ContextHandler - Stopped i.d.j.MutableServletContextHandler@470c4229{/,null,UNAVAILABLE}
