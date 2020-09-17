@@ -537,7 +537,8 @@ public abstract class AbstractFlagEncoder implements FlagEncoder {
      *
      * @Deprecated
      */
-    protected void setSpeed(boolean reverse, IntsRef edgeFlags, double speed) {
+    // protected void setSpeed(boolean reverse, IntsRef edgeFlags, double speed) {
+    public void setSpeed(boolean reverse, IntsRef edgeFlags, double speed) {
         if (speed < 0 || Double.isNaN(speed))
             throw new IllegalArgumentException("Speed cannot be negative or NaN: " + speed + ", flags:" + BitUtil.LITTLE.toBitString(edgeFlags));
 

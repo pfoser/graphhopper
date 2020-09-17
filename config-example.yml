@@ -45,14 +45,14 @@ graphhopper:
   # To enable finite u-turn costs use something like fastest|u_turn_costs=30, where 30 are the u-turn costs in seconds
   # (given as integer). Note that since the u-turn costs are given in seconds the weighting you use should also
   # calculate the weight in seconds. The u-turn costs will only be applied for edge_based, see below.
-  prepare.ch.weightings: fastest
+  # prepare.ch.weightings: fastest
 
   # To enable turn-costs in speed mode (contraction hierarchies) edge-based graph traversal and a more elaborate
   # pre-processing is required. Using this option you can either turn off the edge-based pre-processing (choose 'off'),
   # use edge-based pre-processing for all encoders/vehicles with turn_costs=true (choose 'edge_or_node') or use node-based
   # pre-processing for all encoders/vehicles and additional edge-based pre-processing for all encoders/vehicles with
   # turn_costs=true (choose 'edge_and_node').
-  prepare.ch.edge_based: off
+  # prepare.ch.edge_based: off
 
 
   # Disable the speed mode. Should be used only with routing.max_visited_nodes or when the hybrid mode is enabled instead
@@ -65,10 +65,12 @@ graphhopper:
 
 
   # The hybrid mode can be enabled with
-  # prepare.lm.weightings: fastest
+  prepare.lm.weightings: fastest
+  # should i also include 'FastestDynamic' to use that?
+  #   prepare.lm.weightings: fastestDynamic
 
   # To tune the performance vs. memory usage for the hybrid mode use
-  # prepare.lm.landmarks: 16
+  prepare.lm.landmarks: 16
 
   # Make landmark preparation parallel if you have enough RAM. Change this only if you know what you are doing and if the default worked for you.
   # prepare.lm.threads: 1
@@ -91,7 +93,7 @@ graphhopper:
   # If enabled, allows a user to run flexibility requests even if speed mode is enabled. Every request then has to include a hint ch.disable=true.
   # Attention, non-CH route calculations take way more time and resources, compared to CH routing.
   # A possible attacker might exploit this to slow down your service. Only enable it if you need it and with routing.maxVisitedNodes
-  # routing.ch.disabling_allowed: true
+  routing.ch.disabling_allowed: true
 
 
   # If enabled, allows a user to run flexible mode requests even if the hybrid mode is enabled. Every such request then has to include a hint routing.lm.disable=true.

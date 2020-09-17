@@ -51,6 +51,10 @@ public class CarExpFlagEncoder extends AbstractFlagEncoder {
      */
     protected final Map<String, Integer> defaultSpeedMap = new HashMap<>();
 
+    // blockedEdgesTop10 is the list of edges of concern, blockedEdgesTop10LF key-value pair where key=osmId, value=how many cars took that edge.
+    public long[]  blockedEdgesTop10;
+    public HashMap<Long, Double> blockedEdgesTop10LF;
+
     public CarExpFlagEncoder() {
         this(5, 5, 0);
     }
@@ -102,7 +106,7 @@ public class CarExpFlagEncoder extends AbstractFlagEncoder {
 
         trackTypeSpeedMap.put("grade1", 20); // paved
         trackTypeSpeedMap.put("grade2", 15); // now unpaved - gravel mixed with ...
-        trackTypeSpeedMap.put("grade3", 10); // ... hard and soft materials        
+        trackTypeSpeedMap.put("grade3", 10); // ... hard and soft materials
 
         badSurfaceSpeedMap.add("cobblestone");
         badSurfaceSpeedMap.add("grass_paver");
@@ -154,6 +158,9 @@ public class CarExpFlagEncoder extends AbstractFlagEncoder {
     public int getVersion() {
         return 2;
     }
+
+    public void setBlockedEdgesTop10LF(HashMap<Long, Double> blockedEdgesTop10LF){this.blockedEdgesTop10LF = blockedEdgesTop10LF;}
+    public HashMap<Long, Double> getBlockedEdgesTop10LF(){ return blockedEdgesTop10LF; }
 
     /**
      * Define the place of the speedBits in the edge flags for car.
@@ -248,6 +255,8 @@ public class CarExpFlagEncoder extends AbstractFlagEncoder {
 
     @Override
     public IntsRef handleWayTags(IntsRef edgeFlags, ReaderWay way, EncodingManager.Access accept, long relationFlags) {
+        long wayID= way.getId();
+
         if (accept.canSkip())
             return edgeFlags;
 
@@ -273,13 +282,42 @@ public class CarExpFlagEncoder extends AbstractFlagEncoder {
                 accessEnc.setBool(true, edgeFlags, true);
             }
 
-        } else {
+            if (blockedEdgesTop10LF.containsKey(wayID)) {
+                double edgeVal = blockedEdgesTop10LF.get(wayID);
+                // say for every time the edge is traversed speed is reduced by .001. for example: if an edge has 10,000 car the speed reduced by 10.
+                double newSpeed = speed - (edgeVal * .001);
+                if (newSpeed >= speed) {
+                    setSpeed(false, edgeFlags, 0);
+                    if (speedTwoDirections)
+                        setSpeed(true, edgeFlags, 0);
+                } else {
+                    setSpeed(false, edgeFlags, newSpeed);
+                    if (speedTwoDirections)
+                        setSpeed(true, edgeFlags, newSpeed);
+                    }
+                }
+        }
+        else {
             double ferrySpeed = getFerrySpeed(way);
             accessEnc.setBool(false, edgeFlags, true);
             accessEnc.setBool(true, edgeFlags, true);
             setSpeed(false, edgeFlags, ferrySpeed);
             if (speedTwoDirections)
                 setSpeed(true, edgeFlags, ferrySpeed);
+
+            if (blockedEdgesTop10LF.containsKey(wayID)) {
+                double edgeVal = blockedEdgesTop10LF.get(wayID);
+                double newSpeed = ferrySpeed - (edgeVal * .001);    
+                if (newSpeed >= ferrySpeed) {
+                    setSpeed(false, edgeFlags, 0);
+                    if (speedTwoDirections)
+                        setSpeed(true, edgeFlags, 0);
+                } else {
+                    setSpeed(false, edgeFlags, newSpeed);
+                    if (speedTwoDirections)
+                        setSpeed(true, edgeFlags, newSpeed);
+                }
+            }
         }
 
         for (String restriction : restrictions) {
@@ -362,6 +400,6 @@ public class CarExpFlagEncoder extends AbstractFlagEncoder {
 
     @Override
     public String toString() {
-        return "car";
+        return "car_exp";
     }
 }

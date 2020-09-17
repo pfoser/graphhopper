@@ -744,7 +744,7 @@ public class GraphHopper implements GraphHopperAPI {
 
         GHLock lock = null;
         try {
-            // create locks only if writes are allowed, if they are not allowed a lock cannot be created 
+            // create locks only if writes are allowed, if they are not allowed a lock cannot be created
             // (e.g. on a read only filesystem locks would fail)
             if (ghStorage.getDirectory().getDefaultType().isStoring() && isAllowWrites()) {
                 lockFactory.setLockDir(new File(ghLocation));
@@ -906,6 +906,8 @@ public class GraphHopper implements GraphHopperAPI {
                 weighting = new PriorityWeighting(encoder, hintsMap);
             else
                 weighting = new FastestWeighting(encoder, hintsMap);
+        } else if ("fastestDynamic".equalsIgnoreCase(weightingStr)) {
+                weighting = new FastestDynamicWeighting(encoder, hintsMap);
         } else if ("curvature".equalsIgnoreCase(weightingStr)) {
             if (encoder.supports(CurvatureWeighting.class))
                 weighting = new CurvatureWeighting(encoder, hintsMap);
