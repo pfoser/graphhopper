@@ -534,7 +534,7 @@ public abstract class AbstractFlagEncoder implements FlagEncoder {
     /**
      * Most use cases do not require this method. Will still keep it accessible so that one can disable it
      * until the averageSpeedEncodedValue is moved out of the FlagEncoder.
-     *
+     * Dieter: make it available to dynamically adjust speeds...
      * @Deprecated
      */
     protected void setSpeed(boolean reverse, IntsRef edgeFlags, double speed) {
@@ -553,7 +553,7 @@ public abstract class AbstractFlagEncoder implements FlagEncoder {
         speedEncoder.setDecimal(reverse, edgeFlags, speed);
     }
 
-    double getSpeed(IntsRef edgeFlags) {
+    protected double getSpeed(IntsRef edgeFlags) {
         return getSpeed(false, edgeFlags);
     }
 

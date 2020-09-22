@@ -24,6 +24,7 @@ import com.graphhopper.util.PMap;
  */
 public interface FlagEncoderFactory {
     String CAR = "car";
+    String CAR_EXP = "car_exp";
     String CAR4WD = "car4wd";
     String BIKE = "bike";
     String BIKE2 = "bike2";
